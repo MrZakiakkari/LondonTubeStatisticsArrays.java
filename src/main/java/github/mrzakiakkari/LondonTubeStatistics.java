@@ -31,14 +31,15 @@ public class LondonTubeStatistics
 	public LondonTubeStatistics()
 	{
 
-		fillData(data);
+//		fillData(data);
 		fillDataArrayWithGeneratedStatistics(data);
 
-		printData(data);
+//		printData(data);
+		System.out.print(printOutput(data));
 
-		findBusiestStation(data);
+	//	findBusiestStation(data);
 
-		findPercChange(data);
+	//	findPercChange(data);
 
 	}//end constructor
 
@@ -184,7 +185,7 @@ public class LondonTubeStatistics
 
 	}//end method findPercChange()
 
-	public String printOutput(int[][] stationsDataArray)
+	private String printOutput(int[][] stationsDataArray)
 	{
 		String text = getHeader1()
 				+ getHeader2()
@@ -230,12 +231,23 @@ public class LondonTubeStatistics
 
 	private String getHeader1()
 	{
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+		return String.format("%38s%35s", "Jan-Jun", "Jul-Dec") + System.lineSeparator();
+
 	}
 
 	private String getHeader2()
 	{
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+		String text = String.format("%-20s", " ");
+		for (int i = 0; i < headers.length; i++)
+		{
+			text += String.format("%-10s", headers[i]);
+			if (i == 2)
+			{
+				text += String.format("%-5s", "|");
+			}
+		}
+		text += System.lineSeparator();
+		return text;
 	}
 
 	private String getStations(int[][] stationsDataArray)
@@ -253,12 +265,13 @@ public class LondonTubeStatistics
 
 	private String getBusiestStations(int[][] stationsDataArray)
 	{
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+		return "";
+
 	}
 
 	private String getHeader3()
 	{
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+		return "";
 	}
 
 	private String getPercentageDifferences(int[][] stationsDataArray)
@@ -278,14 +291,15 @@ public class LondonTubeStatistics
 		String text = name + "\t";
 		for (int index = 0; index < stationData.length; index++)
 		{
-			text = text + stationData[index] + "\t" + System.lineSeparator();;
+			text = text + stationData[index] + "\t" ;
 
 		}
+		text+=System.lineSeparator();
 		return text;
 	}
 
 	private double[] calculatePercentageDifferences(int[][] stationsDataArray)
 	{
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+		return new double[stationsDataArray.length];
 	}
 }
