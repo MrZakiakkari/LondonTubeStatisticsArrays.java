@@ -279,7 +279,8 @@ public class LondonTubeStatistics
 		for (int index = 0; index < stationData.length; index++)
 		{
 			text = text + stationData[index] + "\t" + System.lineSeparator();;
-		
+
+		}
 		return text;
 	}
 
